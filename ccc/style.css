@@ -1,0 +1,106 @@
+/* Reset básico para o estilo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(135deg, rgba(255, 204, 0, 0.5), rgba(0, 204, 255, 0.5)), url('imagem11.jpg'); /* Adiciona imagem de fundo com gradiente animado */
+    background-size: cover; /* Faz com que a imagem cubra todo o fundo */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Fixa a imagem de fundo para rolar com o conteúdo */
+    color: #333;
+    animation: backgroundAnimation 10s infinite alternate; /* Adiciona animação ao fundo */
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: center;
+    }
+    100% {
+        background-position: center right;
+    }
+}
+
+header {
+    background-color: rgba(67, 70, 73, 0.8); /* Adiciona transparência ao fundo do cabeçalho */
+    color: rgb(5, 5, 5);
+    text-align: center;
+    padding: 1rem;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+main {
+    padding: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente dentro da galeria */
+    max-width: 1000px; /* Limita a largura máxima da galeria */
+    margin: 0 auto; /* Centraliza a galeria horizontalmente */
+}
+
+.gallery-item {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item img:hover {
+    opacity: 0.7;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Cor do overlay ajustada para um contraste mais suave */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+footer {
+    background-color: rgba(67, 70, 73, 0.8); /* Adiciona transparência ao fundo do rodapé */
+    color: rgb(5, 5, 5);
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
